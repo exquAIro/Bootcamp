@@ -1,0 +1,26 @@
+[project]
+name = "TreeBasedModelling"
+version = "1.0.0"
+description = "Tree Based Modelling"
+readme = "README.md"
+requires-python = "==3.13.9"
+dependencies = [
+    "catboost>=1.2.0",
+    "imblearn>=0.0",
+    "ipykernel>=6.24.0",
+    "ipython>=8.12.0",
+    "lightgbm>=4.0.0",
+    "matplotlib>=3.7.1",
+    "numba>=0.56.4",
+    "numpy>=1.25.0",
+    "openpyxl>=3.1.2",
+    "pandas>=2.1.1",
+    "pip>=23.3.1",
+    "pydotplus>=2.0.2",
+    "scikit-learn>=1.3.0",
+    "scipy>=1.11.1",
+    "seaborn>=0.12.2",
+    "shap>=0.41.0",
+    "six>=1.16.0",
+    "xgboost>=1.7.5",
+]

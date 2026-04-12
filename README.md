@@ -1,4 +1,4 @@
-# 3491 - Tree-based Modeling
+# 3490 - Fundamental Modeling Techniques
 # ExquAIro
 
 ## Retrieving the code

@@ -1,0 +1,22 @@
+openapi: 3.0.0
+info:
+  title: ...
+  description: ...
+  contact:
+    email: email@example.com
+  version: 1.0.0
+servers:
+- url: ...
+paths:
+  /hello:
+    get:
+      summary: Returns hello
+      description: Returns the string 'hello'
+      responses:
+        200:
+          description: OK
+          content:
+            string:
+              schema:
+                type: string
+                example: hello

@@ -1,0 +1,255 @@
+<html>
+
+<head>
+    <title>Pricing optimization application</title>
+</head>
+
+<style type="text/css">
+    .form-style-5 {
+        max-width: 500px;
+        padding: 10px 20px;
+        background: #f4f7f8;
+        margin: 10px auto;
+        padding: 20px;
+        background: #f4f7f8;
+        border-radius: 8px;
+        font-family: Georgia, "Times New Roman", Times, serif;
+    }
+    
+    .form-style-5 fieldset {
+        border: none;
+    }
+    
+    .form-style-5 legend {
+        font-size: 1.4em;
+        margin-bottom: 10px;
+    }
+    
+    .form-style-5 label {
+        display: block;
+        margin-bottom: 8px;
+    }
+	
+	.slidecontainer {
+	  width: 100%; /* Width of the outside container */
+	}
+
+	/* The slider itself */
+	.slider {
+	  -webkit-appearance: none;  /* Override default CSS styles */
+	  appearance: none;
+	  width: 100%; /* Full-width */
+	  height: 25px; /* Specified height */
+	  background: #d2d9dd; /* Grey background */
+	  outline: none; /* Remove outline */
+	  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+	  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+	  transition: opacity .2s;
+	}
+
+	/* Mouse-over effects */
+	.slider:hover {
+	  opacity: 1; /* Fully shown on mouse-over */
+	}
+
+	/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */ 
+	.slider::-webkit-slider-thumb {
+	  -webkit-appearance: none; /* Override default look */
+	  appearance: none;
+	  width: 25px; /* Set a specific slider handle width */
+	  height: 25px; /* Slider handle height */
+	  background: #4CAF50; /* Green background */
+	  cursor: pointer; /* Cursor on hover */
+	}
+
+	.slider::-moz-range-thumb {
+	  width: 25px; /* Set a specific slider handle width */
+	  height: 25px; /* Slider handle height */
+	  background: #4CAF50; /* Green background */
+	  cursor: pointer; /* Cursor on hover */
+	}
+    
+    .form-style-5 input[type="text"],
+    .form-style-5 input[type="date"],
+    .form-style-5 input[type="datetime"],
+    .form-style-5 input[type="email"],
+    .form-style-5 input[type="number"],
+    .form-style-5 input[type="search"],
+    .form-style-5 input[type="time"],
+    .form-style-5 input[type="url"],
+    .form-style-5 textarea,
+    .form-style-5 select {
+        font-family: Georgia, "Times New Roman", Times, serif;
+        background: rgba(255, 255, 255, .1);
+        border: none;
+        border-radius: 4px;
+        font-size: 15px;
+        margin: 0;
+        outline: 0;
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        background-color: #e8eeef;
+        color: #8a97a0;
+        -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+        margin-bottom: 30px;
+    }
+    
+    .form-style-5 input[type="text"]:focus,
+    .form-style-5 input[type="date"]:focus,
+    .form-style-5 input[type="datetime"]:focus,
+    .form-style-5 input[type="email"]:focus,
+    .form-style-5 input[type="number"]:focus,
+    .form-style-5 input[type="search"]:focus,
+    .form-style-5 input[type="time"]:focus,
+    .form-style-5 input[type="url"]:focus,
+    .form-style-5 textarea:focus,
+    .form-style-5 select:focus {
+        background: #d2d9dd;
+    }
+    
+    .form-style-5 select {
+        -webkit-appearance: menulist-button;
+        height: 35px;
+    }
+    
+    .form-style-5 .number {
+        background: #1abc9c;
+        color: #fff;
+        height: 30px;
+        width: 30px;
+        display: inline-block;
+        font-size: 0.8em;
+        margin-right: 4px;
+        line-height: 30px;
+        text-align: center;
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+        border-radius: 15px 15px 15px 0px;
+    }
+    
+    .form-style-5 input[type="submit"],
+    .form-style-5 input[type="button"] {
+        position: relative;
+        display: block;
+        padding: 19px 39px 18px 39px;
+        color: #FFF;
+        margin: 0 auto;
+        background: #1abc9c;
+        font-size: 18px;
+        text-align: center;
+        font-style: normal;
+        width: 100%;
+        border: 1px solid #16a085;
+        border-width: 1px 1px 3px;
+        margin-bottom: 10px;
+    }
+    
+    .form-style-5 input[type="submit"]:hover,
+    .form-style-5 input[type="button"]:hover {
+        background: #109177;
+    }
+    
+    body {
+        background: url("/static/bgimage1.jpg") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-color: #cccccc;
+    }
+</style>
+
+
+
+<body>
+	
+    <div class="form-style-5">
+        <form action="/predict_post" method="post">
+            <fieldset>
+                <legend><span class="number">HR</span>Assess churn risk among new employees</legend>
+            
+			
+				<label for="average_monthly_hours">Number of monthly working hours:</label>
+				<div class="slidecontainer">
+				  <input type="range" min="96" max="310" value="180" class="slider" id="average_monthly_hours" name="average_monthly_hours">
+				  <p3>Value: <span id="demo"></span></p3>
+				</div>
+				
+				<script>
+				var slider = document.getElementById("average_monthly_hours");
+				var output = document.getElementById("demo");
+				output.innerHTML = slider.value;
+
+				slider.oninput = function() {
+				  output.innerHTML = this.value;
+				}
+				</script>
+				<br>
+				<br>
+				
+				<label for="salary">Salary level:</label>
+                <select id="salary" name="salary">
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+		
+			
+                <label for="number_project">Number of projects (1-7):</label>
+                <input type="text" value="4" id="number_project" name="number_project">
+				
+                <label for="last_evaluation">Last evaluation score:</label>
+				<div class="slidecontainer">
+				  <input type="range" min="1" max="100" value="70" class="slider" id="last_evaluation" name="last_evaluation">
+				  <p3>Value: <span id="demo1"></span></p3>
+				</div>
+				
+				<script>
+				var slider = document.getElementById("last_evaluation");
+				var output1 = document.getElementById("demo1");
+				output1.innerHTML = slider.value;
+
+				slider.oninput = function() {
+				  output1.innerHTML = this.value;
+				}
+				</script>
+				<br>
+				<br>
+				
+				<label for="satisfaction_level">Satisfaction level:</label>
+				<div class="slidecontainer">
+				  <input type="range" min="1" max="100" value="70" class="slider" id="satisfaction_level" name="satisfaction_level">
+				  <p3>Value: <span id="demo2"></span></p3>
+				</div>
+				
+				<script>
+				var slider = document.getElementById("satisfaction_level");
+				var output2 = document.getElementById("demo2");
+				output2.innerHTML = slider.value;
+
+				slider.oninput = function() {
+				  output2.innerHTML = this.value;
+				}
+				</script>
+				<br>
+				<br>
+				
+				<label for="department">Department:</label>
+                <select id="department" name="department">
+                    <option value="RandD">RandD</option>
+                    <option value="management">Management</option>
+					<option value="other">Other department</option>
+                </select>
+				
+				<label>Model's prediction: {{pred}}</label>
+				
+            </fieldset>
+            <input type="submit" value="Estimate if employee will leave" />
+        </form>
+    </div>
+</body>
+
+</html>

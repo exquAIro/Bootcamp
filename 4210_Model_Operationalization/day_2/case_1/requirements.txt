@@ -1,0 +1,15 @@
+Click
+Flask
+itsdangerous
+Jinja2
+joblib
+MarkupSafe
+numpy
+pandas
+pickle-mixin
+python-dateutil
+pytz
+scikit-learn
+scipy
+six
+Werkzeug
